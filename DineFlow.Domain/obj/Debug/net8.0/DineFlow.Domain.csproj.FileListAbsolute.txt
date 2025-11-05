@@ -1,0 +1,11 @@
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\bin\Debug\net8.0\DineFlow.Domain.deps.json
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\bin\Debug\net8.0\DineFlow.Domain.dll
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\bin\Debug\net8.0\DineFlow.Domain.pdb
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\DineFlow.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\DineFlow.Domain.AssemblyInfoInputs.cache
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\DineFlow.Domain.AssemblyInfo.cs
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\DineFlow.Domain.csproj.CoreCompileInputs.cache
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\DineFlow.Domain.dll
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\refint\DineFlow.Domain.dll
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\DineFlow.Domain.pdb
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\ref\DineFlow.Domain.dll
