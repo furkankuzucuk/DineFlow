@@ -9,3 +9,4 @@ C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\DineFl
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\refint\DineFlow.Domain.dll
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\DineFlow.Domain.pdb
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\ref\DineFlow.Domain.dll
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Domain\obj\Debug\net8.0\DineFlow.Domain.sourcelink.json

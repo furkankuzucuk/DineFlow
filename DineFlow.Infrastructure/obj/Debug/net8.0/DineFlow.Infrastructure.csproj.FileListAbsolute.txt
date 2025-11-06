@@ -15,3 +15,4 @@ C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Infrastructure\obj\Debug\net8.
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Infrastructure\obj\Debug\net8.0\DineFlow.Infrastructure.pdb
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Infrastructure\obj\Debug\net8.0\DineFlow.Infrastructure.genruntimeconfig.cache
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Infrastructure\obj\Debug\net8.0\ref\DineFlow.Infrastructure.dll
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Infrastructure\obj\Debug\net8.0\DineFlow.Infrastructure.sourcelink.json

@@ -15,3 +15,4 @@ C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Application\obj\Debug\net8.0\D
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Application\obj\Debug\net8.0\refint\DineFlow.Application.dll
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Application\obj\Debug\net8.0\DineFlow.Application.pdb
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Application\obj\Debug\net8.0\ref\DineFlow.Application.dll
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.Application\obj\Debug\net8.0\DineFlow.Application.sourcelink.json

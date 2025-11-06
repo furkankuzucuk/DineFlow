@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DineFlow.Infrastructure.Migrations
 {
     [DbContext(typeof(DineFlowDbContext))]
-    [Migration("20251105133837_InitialCreate")]
+    [Migration("20251106115545_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

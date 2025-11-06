@@ -1,29 +1,37 @@
 using DineFlow.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization; // 👈 eklendi
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+// ✅ JSON döngü hatasını engelle (önceki hatanı da çözer)
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        options.JsonSerializerOptions.WriteIndented = true; // çıktı okunaklı olsun
+    });
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// ➕ MSSQL bağlantısı
+// ✅ Veritabanı bağlantısı
 builder.Services.AddDbContext<DineFlowDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
-        b => b.MigrationsAssembly("DineFlow.Infrastructure")
-    ));
-
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+// ✅ Swagger’ı her ortamda aktif et (sadece Development’ta değil)
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "DineFlow API v1");
+    c.RoutePrefix = string.Empty; // 👈 https://localhost:7287 direkt Swagger olur
+});
 
+// ✅ HTTPS yönlendirmesi aktif (launchSettings.json’da 7287 varsa sorun çıkmaz)
 app.UseHttpsRedirection();
+
 app.UseAuthorization();
 app.MapControllers();
 

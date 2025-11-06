@@ -3,6 +3,7 @@ namespace DineFlow.Domain.Entities
     public class OrderItem
     {
         public int Id { get; set; }
+
         public int OrderId { get; set; }
         public Order? Order { get; set; }
 
@@ -10,6 +11,6 @@ namespace DineFlow.Domain.Entities
         public MenuItem? MenuItem { get; set; }
 
         public int Quantity { get; set; }
-        public decimal TotalPrice => MenuItem != null ? MenuItem.Price * Quantity : 0;
+        public decimal TotalPrice { get; set; }
     }
 }

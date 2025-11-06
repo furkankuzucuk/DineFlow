@@ -173,3 +173,4 @@ C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.API\obj\Debug\net8.0\refint\Di
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.API\obj\Debug\net8.0\DineFlow.API.pdb
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.API\obj\Debug\net8.0\DineFlow.API.genruntimeconfig.cache
 C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.API\obj\Debug\net8.0\ref\DineFlow.API.dll
+C:\Users\furka\Documents\GitHub\DineFlow\DineFlow.API\obj\Debug\net8.0\DineFlow.API.sourcelink.json
