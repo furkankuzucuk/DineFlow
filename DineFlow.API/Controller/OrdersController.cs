@@ -1,12 +1,12 @@
 using DineFlow.Infrastructure.Persistence;
+using DineFlow.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using DineFlow.Domain.Entities;
 
 namespace DineFlow.API.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class OrdersController : ControllerBase
     {
         private readonly DineFlowDbContext _context;
@@ -16,35 +16,31 @@ namespace DineFlow.API.Controllers
             _context = context;
         }
 
-        // 🟢 Sipariş oluştur
+        // 🔹 Sipariş oluşturma
         [HttpPost]
-        public async Task<IActionResult> CreateOrder([FromBody] OrderCreateDto dto)
+        public async Task<IActionResult> CreateOrder([FromBody] OrderRequest request)
         {
-            if (dto == null || dto.Items.Count == 0)
-                return BadRequest("Sipariş verisi eksik veya geçersiz.");
+            if (request == null || request.Items == null || !request.Items.Any())
+                return BadRequest("Sipariş boş olamaz.");
 
             var order = new Order
             {
-                TableNumber = dto.TableNumber,   // ✅ artık int
+                CustomerName = request.CustomerName,
                 CreatedAt = DateTime.Now,
-                TotalPrice = 0
+                OrderItems = new List<OrderItem>()
             };
 
-            foreach (var item in dto.Items)
+            foreach (var item in request.Items)
             {
                 var menuItem = await _context.MenuItems.FindAsync(item.MenuItemId);
                 if (menuItem == null)
-                    return NotFound($"Menu item {item.MenuItemId} bulunamadı.");
+                    return BadRequest($"MenuItem ID {item.MenuItemId} bulunamadı.");
 
-                var orderItem = new OrderItem
+                order.OrderItems.Add(new OrderItem
                 {
                     MenuItemId = item.MenuItemId,
-                    Quantity = item.Quantity,
-                    TotalPrice = menuItem.Price * item.Quantity
-                };
-
-                order.OrderItems.Add(orderItem);
-                order.TotalPrice += orderItem.TotalPrice;
+                    Quantity = item.Quantity
+                });
             }
 
             _context.Orders.Add(order);
@@ -52,44 +48,43 @@ namespace DineFlow.API.Controllers
 
             return Ok(new
             {
-                order.Id,
-                order.TableNumber,
-                order.TotalPrice,
-                order.CreatedAt
+                message = "Sipariş başarıyla oluşturuldu",
+                orderId = order.Id
             });
         }
 
-        // 🟡 Tüm siparişleri listele
+        // 🔹 Siparişleri listeleme (frontend için)
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public IActionResult GetOrders()
         {
-            var orders = await _context.Orders
+            var orders = _context.Orders
                 .Include(o => o.OrderItems)
-                .ThenInclude(oi => oi.MenuItem)
+                .ThenInclude(i => i.MenuItem)
+                .OrderByDescending(o => o.CreatedAt)
                 .Select(o => new
                 {
                     o.Id,
-                    o.TableNumber,
+                    o.CustomerName,
                     o.CreatedAt,
-                    o.TotalPrice,
-                    Items = o.OrderItems.Select(oi => new
+                    Items = o.OrderItems.Select(i => new
                     {
-                        oi.MenuItem.Name,
-                        oi.Quantity,
-                        Price = oi.MenuItem.Price * oi.Quantity
-                    })
+                        i.MenuItem.Name,
+                        i.Quantity,
+                        i.MenuItem.Price
+                    }),
+                    Total = o.OrderItems.Sum(i => i.MenuItem.Price * i.Quantity)
                 })
-                .ToListAsync();
+                .ToList();
 
             return Ok(orders);
         }
     }
 
-    // 🧾 DTO’lar
-    public class OrderCreateDto
+    // 🔹 DTO modelleri
+    public class OrderRequest
     {
-        public int TableNumber { get; set; }  // 🔧 string → int
-        public List<OrderItemDto> Items { get; set; } = new();
+        public string CustomerName { get; set; }
+        public List<OrderItemDto> Items { get; set; }
     }
 
     public class OrderItemDto

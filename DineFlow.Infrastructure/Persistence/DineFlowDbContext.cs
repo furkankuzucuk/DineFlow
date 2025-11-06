@@ -11,6 +11,8 @@ namespace DineFlow.Infrastructure.Persistence
         public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,6 +38,8 @@ namespace DineFlow.Infrastructure.Persistence
                 .WithOne(oi => oi.MenuItem)
                 .HasForeignKey(oi => oi.MenuItemId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+
         }
     }
 }
