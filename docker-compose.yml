@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: dineflow-sql-server
+    environment:
+      SA_PASSWORD: "FurkanKuzucukSoftwareEngineering2026" 
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    restart: always
+
+  api:
+    build:
+      context: . 
+      dockerfile: DineFlowBackEnd/Dockerfile 
+    container_name: dineflow-api
+    ports:
+      - "5180:8080"  # <-- PORTU 5180 OLARAK GÜNCELLEDİK
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development" # <-- SWAGGER İÇİN BU SATIRI EKLEDİK
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=DineFlowDB;User Id=sa;Password=FurkanKuzucukSoftwareEngineering2026;TrustServerCertificate=True;"
+    depends_on:
+      - sqlserver 
+    restart: always
+
+volumes:
+  sqlserver_data:

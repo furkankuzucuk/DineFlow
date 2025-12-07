@@ -1,0 +1,290 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.API/DineFlow.API.csproj": {}
+  },
+  "projects": {
+    "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.API/DineFlow.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.API/DineFlow.API.csproj",
+        "projectName": "DineFlow.API",
+        "projectPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.API/DineFlow.API.csproj",
+        "packagesPath": "/Users/furkankuzucuk/.nuget/packages/",
+        "outputPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/furkankuzucuk/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Application/DineFlow.Application.csproj": {
+                "projectPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Application/DineFlow.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Application/DineFlow.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Application/DineFlow.Application.csproj",
+        "projectName": "DineFlow.Application",
+        "projectPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Application/DineFlow.Application.csproj",
+        "packagesPath": "/Users/furkankuzucuk/.nuget/packages/",
+        "outputPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/furkankuzucuk/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Domain/DineFlow.Domain.csproj": {
+                "projectPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Domain/DineFlow.Domain.csproj"
+              },
+              "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Infrastructure/DineFlow.Infrastructure.csproj": {
+                "projectPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Infrastructure/DineFlow.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Domain/DineFlow.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Domain/DineFlow.Domain.csproj",
+        "projectName": "DineFlow.Domain",
+        "projectPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Domain/DineFlow.Domain.csproj",
+        "packagesPath": "/Users/furkankuzucuk/.nuget/packages/",
+        "outputPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/furkankuzucuk/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Infrastructure/DineFlow.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Infrastructure/DineFlow.Infrastructure.csproj",
+        "projectName": "DineFlow.Infrastructure",
+        "projectPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Infrastructure/DineFlow.Infrastructure.csproj",
+        "packagesPath": "/Users/furkankuzucuk/.nuget/packages/",
+        "outputPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/furkankuzucuk/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Domain/DineFlow.Domain.csproj": {
+                "projectPath": "/Users/furkankuzucuk/Documents/GitHub/DineFlow/DineFlowBackEnd/DineFlow.Domain/DineFlow.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
