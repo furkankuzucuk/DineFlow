@@ -1,12 +1,13 @@
-// src/api.js dosyası
 const API_BASE = "http://localhost:5180/api";
 
+// Menüyü Getir
 export async function fetchMenuItems() {
   const res = await fetch(`${API_BASE}/MenuItems`);
   if (!res.ok) throw new Error("Menü getirilemedi");
   return await res.json();
 }
 
+// Sipariş Oluştur (Veya Mevcut Masaya Ekle)
 export async function createOrder(orderData) {
   const res = await fetch(`${API_BASE}/Orders`, {
     method: "POST",
@@ -17,7 +18,16 @@ export async function createOrder(orderData) {
   return await res.json();
 }
 
-// ✅ EKSİK OLAN VE DIŞARI AKTARILMASI GEREKEN FONKSİYON:
+// Mutfak: "Hazırlandı" Olarak İşaretle
+export async function markOrderAsReady(orderId) {
+  const res = await fetch(`${API_BASE}/Orders/${orderId}/ready`, {
+    method: "PUT",
+  });
+  if (!res.ok) throw new Error("Hazırlandı işaretlenemedi");
+  return await res.json();
+}
+
+// Kasa: Hesabı Kapat ve Masayı Boşalt
 export async function closeOrder(tableName) {
   const res = await fetch(`${API_BASE}/Orders/${tableName}/close`, {
     method: "POST",

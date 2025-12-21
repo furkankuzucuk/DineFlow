@@ -19,12 +19,29 @@ services:
       dockerfile: DineFlowBackEnd/Dockerfile 
     container_name: dineflow-api
     ports:
-      - "5180:8080"  # <-- PORTU 5180 OLARAK GÜNCELLEDİK
+      - "5180:8080"
     environment:
-      ASPNETCORE_ENVIRONMENT: "Development" # <-- SWAGGER İÇİN BU SATIRI EKLEDİK
+      ASPNETCORE_ENVIRONMENT: "Development"
       ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=DineFlowDB;User Id=sa;Password=FurkanKuzucukSoftwareEngineering2026;TrustServerCertificate=True;"
     depends_on:
       - sqlserver 
+    restart: always
+
+  # ✅ YENİ EKLENEN KISIM: FRONTEND
+  frontend:
+    build:
+      context: ./dineflow-frontend
+      dockerfile: Dockerfile
+    container_name: dineflow-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./dineflow-frontend:/app
+      - /app/node_modules # BU SATIR ÇOK ÖNEMLİ: Yerel node_modules'ü ezer, Docker'ınkini kullanır.
+    environment:
+      - VITE_API_URL=http://localhost:5180 # Tarayıcıdan erişeceği için localhost kalabilir
+    depends_on:
+      - api
     restart: always
 
 volumes:

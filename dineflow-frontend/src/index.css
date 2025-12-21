@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* body stili için şimdilik @apply yerine standart CSS kullanalım, hatayı izole edelim */
+body {
+  background-color: #f9fafb; /* bg-gray-50 rengi */
+  color: #1f2937; /* text-gray-800 rengi */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+/* src/index.css dosyasının en tepesine ekleyin */
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Ana scroll'u kapatır, sadece bizim belirlediğimiz yerler kayar */
+}
