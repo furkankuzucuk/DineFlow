@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
-import TablesPage from "./assets/pages/TablesPage"; // Yeni sayfamız
+import TablesPage from "./assets/pages/TablesPage";
 import MenuPage from "./assets/pages/MenuPage";
 import OrdersPage from "./assets/pages/OrdersPage";
 
@@ -8,44 +8,57 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+    <div className="min-h-screen bg-gray-50">
+      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-16">
+            
+            {/* LOGO */}
             <div className="flex items-center gap-3">
-              <div className="bg-gradient-to-tr from-orange-500 to-amber-500 text-white p-2 rounded-xl font-bold text-xl shadow-md">
-                DF
-              </div>
-              <span className="font-extrabold text-xl tracking-tight text-gray-800">
-                DineFlow <span className="text-orange-600">POS</span>
+              <img
+                src="/images/logo.png"
+                alt="DineFlow"
+                className="h-9 w-9 object-contain"
+              />
+              <span className="font-extrabold text-xl text-primary tracking-tight">
+                DineFlow <span className="text-secondary">POS</span>
               </span>
             </div>
 
-            <div className="flex items-center gap-4">
-              <Link 
-                to="/" 
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200
-                  ${location.pathname === '/' ? 'bg-orange-50 text-orange-700 shadow-sm' : 'text-gray-500 hover:bg-gray-100'}`}
+            {/* MENÜ */}
+            <div className="flex items-center gap-3">
+              <Link
+                to="/"
+                className={`h-10 px-4 flex items-center gap-2 rounded-lg text-sm font-bold transition
+                ${
+                  location.pathname === "/"
+                    ? "bg-secondary/10 text-secondary"
+                    : "text-gray-500 hover:bg-gray-100"
+                }`}
               >
                 🪑 Masalar
               </Link>
-              
-              <Link 
-                to="/orders" 
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200
-                  ${location.pathname === '/orders' ? 'bg-blue-50 text-blue-700 shadow-sm' : 'text-gray-500 hover:bg-gray-100'}`}
+
+              <Link
+                to="/orders"
+                className={`h-10 px-4 flex items-center gap-2 rounded-lg text-sm font-bold transition
+                ${
+                  location.pathname === "/orders"
+                    ? "bg-primary/10 text-primary"
+                    : "text-gray-500 hover:bg-gray-100"
+                }`}
               >
-                🧾 Mutfak
+                👨‍🍳 Mutfak
               </Link>
             </div>
           </div>
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 py-6">
         <Routes>
           <Route path="/" element={<TablesPage />} />
-          <Route path="/menu/:tableName" element={<MenuPage />} /> {/* DİNAMİK MASA LİNKİ */}
+          <Route path="/menu/:tableName" element={<MenuPage />} />
           <Route path="/orders" element={<OrdersPage />} />
         </Routes>
       </div>

@@ -9,40 +9,47 @@ export default function TablesPage() {
 
   useEffect(() => {
     fetch("http://localhost:5180/api/Orders")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Gelen Veri (Masalar):", data); // Konsola bakmak için
-
-        const busyTables = data
-          // 1. Filtre: Masa Açık mı? (Büyük/Küçük harf kontrolü)
-          .filter((o) => o.isActive === true || o.IsActive === true)
-          // 2. Harita: Masa İsmini Al (Büyük/Küçük harf kontrolü)
-          // ✅ SORUN BURADAYDI: customerName yoksa CustomerName'i al dedik.
-          .map((o) => o.customerName || o.CustomerName); 
-        
-        setActiveTables(busyTables);
-      })
-      .catch((err) => console.error("Hata:", err));
+      .then(res => res.json())
+      .then(data => {
+        const busy = data
+          .filter(o => o.isActive === true || o.IsActive === true)
+          .map(o => o.customerName || o.CustomerName);
+        setActiveTables(busy);
+      });
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Restoran Yerleşimi</h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-        {tables.map((tableName) => {
-          const isBusy = activeTables.includes(tableName);
+    <div>
+      <h1 className="text-3xl font-extrabold text-center text-primary mb-8">
+        Restoran Yerleşimi
+      </h1>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {tables.map((table) => {
+          const isBusy = activeTables.includes(table);
           return (
             <button
-              key={tableName}
-              onClick={() => navigate(`/menu/${tableName}`)}
-              className={`h-40 rounded-2xl shadow-lg border-4 flex flex-col items-center justify-center transition-all transform hover:scale-105 active:scale-95
-                ${isBusy 
-                  ? "bg-red-100 border-red-500 text-red-700" 
-                  : "bg-white border-green-400 text-gray-700 hover:bg-green-50"}`}
+              key={table}
+              onClick={() => navigate(`/menu/${table}`)}
+              className={`h-40 rounded-2xl border-2 shadow-md flex flex-col items-center justify-center transition
+              ${
+                isBusy
+                  ? "bg-secondary/10 border-secondary text-secondary"
+                  : "bg-white border-primary/40 text-primary hover:bg-primary/5"
+              }`}
             >
-              <span className="text-4xl mb-2">{isBusy ? "🍲" : "🍽️"}</span>
-              <span className="text-xl font-bold">{tableName}</span>
-              <span className={`mt-3 px-4 py-1 rounded-full text-sm font-bold ${isBusy ? "bg-red-500 text-white" : "bg-green-200 text-green-800"}`}>
+              <span className="text-4xl mb-2">
+                {isBusy ? "🍲" : "🍽️"}
+              </span>
+              <span className="text-lg font-bold">{table}</span>
+              <span
+                className={`mt-3 px-4 py-1 rounded-full text-xs font-bold
+                ${
+                  isBusy
+                    ? "bg-secondary text-white"
+                    : "bg-primary/10 text-primary"
+                }`}
+              >
                 {isBusy ? "DOLU" : "BOŞ"}
               </span>
             </button>
