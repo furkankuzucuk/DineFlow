@@ -1,4 +1,4 @@
-// DineFlow.Domain/Entities/OrderItem.cs
+
 namespace DineFlow.Domain.Entities
 {
     public class OrderItem

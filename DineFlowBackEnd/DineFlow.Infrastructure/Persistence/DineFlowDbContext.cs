@@ -18,21 +18,20 @@ namespace DineFlow.Infrastructure.Persistence
         {
             base.OnModelCreating(modelBuilder);
 
-            // 🔗 Category → MenuItems ilişkisi
+            
             modelBuilder.Entity<Category>()
                 .HasMany(c => c.MenuItems)
                 .WithOne(m => m.Category)
                 .HasForeignKey(m => m.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // 🔗 Order → OrderItems ilişkisi
+            
             modelBuilder.Entity<Order>()
                 .HasMany(o => o.OrderItems)
                 .WithOne(oi => oi.Order)
                 .HasForeignKey(oi => oi.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // 🔗 MenuItem → OrderItems ilişkisi
             modelBuilder.Entity<MenuItem>()
                 .HasMany(m => m.OrderItems)
                 .WithOne(oi => oi.MenuItem)

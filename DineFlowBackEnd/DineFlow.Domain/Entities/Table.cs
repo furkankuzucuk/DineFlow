@@ -5,7 +5,7 @@ namespace DineFlow.Domain.Entities
         public int Id { get; set; }
         public int TableNumber { get; set; }
 
-        // Siparişlerle ilişki
+       
         public ICollection<Order>? Orders { get; set; }
     }
 }

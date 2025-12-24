@@ -27,7 +27,6 @@ services:
       - sqlserver 
     restart: always
 
-  # ✅ YENİ EKLENEN KISIM: FRONTEND
   frontend:
     build:
       context: ./dineflow-frontend
@@ -37,9 +36,9 @@ services:
       - "5173:5173"
     volumes:
       - ./dineflow-frontend:/app
-      - /app/node_modules # BU SATIR ÇOK ÖNEMLİ: Yerel node_modules'ü ezer, Docker'ınkini kullanır.
+      - /app/node_modules 
     environment:
-      - VITE_API_URL=http://localhost:5180 # Tarayıcıdan erişeceği için localhost kalabilir
+      - VITE_API_URL=http://localhost:5180 
     depends_on:
       - api
     restart: always

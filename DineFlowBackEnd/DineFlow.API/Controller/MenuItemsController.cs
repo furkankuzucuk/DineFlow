@@ -15,7 +15,6 @@ namespace DineFlow.API.Controllers
             _context = context;
         }
 
-        // 🔹 Tüm menü öğelerini getir
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -33,7 +32,6 @@ namespace DineFlow.API.Controllers
             return Ok(items);
         }
 
-        // 🔹 Kategoriye göre menü öğelerini getir
         [HttpGet("category/{id}")]
         public async Task<IActionResult> GetByCategory(int id)
         {
