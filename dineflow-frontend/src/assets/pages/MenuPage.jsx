@@ -103,13 +103,13 @@ export default function MenuPage() {
   return (
     <div className="fixed inset-0 flex bg-gray-50 font-sans text-gray-800 overflow-hidden">
       
-      {/* --- SOL PANEL (MENÜ) --- */}
+      
       <div className="flex-1 flex flex-col h-full border-r border-gray-200 min-w-0">
         
-        {/* HEADER */}
+       
         <header className="bg-white border-b border-gray-100 shrink-0">
           
-          {/* Üst Satır: Logo ve Geri Tuşu */}
+          
           <div className="h-16 px-6 flex justify-between items-center">
             <div className="flex items-center gap-4">
               <button onClick={() => navigate("/")} className="bg-gray-100 text-gray-600 hover:bg-orange-50 hover:text-orange-600 px-3 py-2 rounded-lg text-sm font-bold transition-colors flex items-center gap-2">
@@ -119,13 +119,13 @@ export default function MenuPage() {
               <span className="font-bold text-xl tracking-tight text-gray-900 hidden sm:block">DineFlow</span>
             </div>
             
-            {/* Masa Adı Sağda */}
+      
             <div className="font-bold text-lg text-orange-600 border border-orange-100 bg-orange-50 px-3 py-1 rounded-lg">
               {tableName}
             </div>
           </div>
 
-          {/* Alt Satır: KATEGORİ BUTONLARI (Burayı Genişlettim) */}
+        
           <div className="px-6 pb-3 pt-1">
             <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2">
               {categories.map((cat) => (
@@ -145,7 +145,7 @@ export default function MenuPage() {
           </div>
         </header>
         
-        {/* Menü Grid Listesi */}
+      
         <div className="flex-1 overflow-y-auto p-5 bg-gray-50/50">
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 pb-20">
             {filteredMenu.map((item) => (
@@ -168,7 +168,7 @@ export default function MenuPage() {
         </div>
       </div>
 
-      {/* --- SAĞ PANEL (ADİSYON) --- */}
+      
       <div className="w-[380px] h-full bg-white shadow-2xl flex flex-col border-l border-gray-200 z-20 shrink-0 overflow-hidden relative">
         <div className="h-14 bg-gray-900 text-white px-5 flex justify-between items-center shadow-md shrink-0 z-10">
           <div className="flex items-center gap-2">

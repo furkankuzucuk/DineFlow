@@ -13,7 +13,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             
-            {/* LOGO */}
+            
             <div className="flex items-center gap-3">
               <img
                 src="/images/logo.png"
@@ -25,7 +25,7 @@ export default function App() {
               </span>
             </div>
 
-            {/* MENÜ */}
+            
             <div className="flex items-center gap-3">
               <Link
                 to="/"

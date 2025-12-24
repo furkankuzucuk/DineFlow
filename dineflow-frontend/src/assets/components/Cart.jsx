@@ -5,7 +5,7 @@ export default function Cart({ cart, onRemove, onSubmit }) {
 
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full">
-      {/* Başlık */}
+   
       <div className="p-4 bg-gray-50 border-b border-gray-100 rounded-t-2xl flex justify-between items-center">
         <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
           🛍️ Sipariş Özeti
@@ -15,7 +15,7 @@ export default function Cart({ cart, onRemove, onSubmit }) {
         </span>
       </div>
 
-      {/* Liste */}
+      
       <div className="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar">
         {cart.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-40 text-gray-400">
@@ -51,7 +51,7 @@ export default function Cart({ cart, onRemove, onSubmit }) {
         )}
       </div>
 
-      {/* Alt Kısım */}
+   
       {cart.length > 0 && (
         <div className="p-5 bg-gray-50 rounded-b-2xl border-t border-gray-200">
           <div className="flex justify-between items-end mb-4">

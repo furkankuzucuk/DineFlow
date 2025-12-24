@@ -74,7 +74,7 @@ export default function CategoryView() {
           ))}
         </div>
 
-        {/* Sepet Float Action Button (FAB) Style */}
+        
         {cart.length > 0 && (
           <div className="fixed bottom-6 right-6 bg-white shadow-2xl p-4 rounded-2xl border border-orange-100 z-50 w-80 animate-fade-in-up">
             <div className="flex justify-between items-center mb-3 border-b pb-2">
@@ -98,7 +98,7 @@ export default function CategoryView() {
           </div>
         )}
 
-        {/* Mesaj Toast */}
+        
         {message && (
           <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-full shadow-2xl z-50 animate-bounce">
             {message}

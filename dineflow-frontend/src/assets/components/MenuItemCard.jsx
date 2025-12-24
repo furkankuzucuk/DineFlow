@@ -3,7 +3,7 @@ import React from "react";
 export default function MenuItemCard({ item, onAdd }) {
   return (
     <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full">
-      {/* Görsel Alanı (Placeholder) */}
+
       <div className="h-32 bg-gradient-to-r from-orange-400 to-amber-300 flex items-center justify-center text-white text-4xl">
         🍽️
       </div>
