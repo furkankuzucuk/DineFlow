@@ -24,7 +24,7 @@ export default function CategoryView() {
   async function handleOrder() {
     try {
       const order = {
-        customerName: "Masa 5", // Demo veri
+        customerName: "Masa 5", 
         items: cart.map((c) => ({ menuItemId: c.id, quantity: 1 })),
       };
       await createOrder(order);

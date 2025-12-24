@@ -1,4 +1,4 @@
-// src/api.js dosyası
+
 const API_BASE = "http://localhost:5180/api";
 
 export async function fetchMenuItems() {
@@ -17,7 +17,7 @@ export async function createOrder(orderData) {
   return await res.json();
 }
 
-// ✅ EKSİK OLAN VE DIŞARI AKTARILMASI GEREKEN FONKSİYON:
+
 export async function closeOrder(tableName) {
   const res = await fetch(`${API_BASE}/Orders/${tableName}/close`, {
     method: "POST",
